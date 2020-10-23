@@ -10,7 +10,15 @@ import {isEmpty} from 'lodash';
 import {showMessage} from '../Utilities/UiUtilities';
 import {addItem} from '../Services/ApiCaller';
 import ProgressDialog from '../Components/ProgressDialog';
-import {printLogs} from '../Config/ReactotronConfig';
+
+const INITIAL_STATE = {
+  isDisabled: true,
+  url: '',
+  auth: '',
+  template: '',
+  params: {},
+  isLoading: false,
+};
 
 class HomeScreen extends Component {
   constructor(props) {
@@ -24,13 +32,18 @@ class HomeScreen extends Component {
       isLoading: false,
     };
   }
-
+  
   componentDidMount() {
+    this.props.navigation.addListener('focus', this.resetInfoHandler);
   }
-
+  
+  resetInfoHandler = () => {
+    this.setState(INITIAL_STATE);
+  };
+  
   disableButton = () => this.setState({isDisabled: true});
   enableButton = (data = {}) => this.setState({isDisabled: false, ...data});
-
+  
   onSuccess = async (rawData) => {
     const {isError, params} = await buildApiParams(rawData);
     if (isError) {
@@ -38,26 +51,26 @@ class HomeScreen extends Component {
     }
     this.enableButton({params});
   };
-
+  
   makeApiCall = async () => {
     if (this.state.isLoading) {
       return;
     }
     const {params} = this.state;
-    const {url, auth} = await getAllInformation();
+    const {url, auth, template} = await getAllInformation();
     if (isEmpty(url) || isEmpty(auth)) {
       showMessage({title: 'Configure info on setting page'});
       return {isError: true};
     }
     try {
       this.setState({isLoading: true, isDisabled: true});
-      await addItem({url, auth, params});
+      await addItem({url, auth, params, template});
     } catch (e) {
     } finally {
       this.setState({isLoading: false});
     }
   };
-
+  
   render() {
     const {isDisabled} = this.state;
     return (

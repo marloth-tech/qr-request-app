@@ -4,7 +4,11 @@ import {Colors} from '../Theme/Colors';
 import {showMessage} from '../Utilities/UiUtilities';
 import CustomNavBar from '../Components/CustomHeader';
 import {StyleSheet, Text, TextInput, View} from 'react-native';
-import {getAllInformation, setAllInformation, stringifyJson,} from '../Utilities/Storage';
+import {
+	getAllInformation,
+	setAllInformation,
+	stringifyJson,
+} from '../Utilities/Storage';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
@@ -43,8 +47,8 @@ class SettingScreen extends Component {
 	renderInput = (title, valueKey, multiline, numberOfLines, style) => {
 		return (
 			<View>
-				<Text style={ styles.titleStyle }>{ title }</Text>
-				<View style={ [ styles.inputContainer ] }>
+				<Text style={styles.titleStyle}>{title}</Text>
+				<View style={[styles.inputContainer]}>
 					<TextInput
 						editable
 						value={ this.state[valueKey] }
@@ -86,7 +90,7 @@ class SettingScreen extends Component {
 	
 	render() {
 		return (
-			<View style={ styles.container }>
+			<View style={styles.container}>
 				<CustomNavBar
 					title="Settings"
 					isBack
@@ -94,12 +98,12 @@ class SettingScreen extends Component {
 					onPressRightIcon={ this.saveInfo }
 					backgroundColor={ Colors.background }
 				/>
-				<KeyboardAwareScrollView style={ styles.container }>
-					{ this.renderInput('URL', 'url', false) }
-					{ this.renderInput('Auth', 'auth', false) }
-					{ this.renderInput('Request Template', 'template', true, 14, {
+				<KeyboardAwareScrollView style={styles.container}>
+					{this.renderInput('URL', 'url', false)}
+					{this.renderInput('Auth', 'auth', false)}
+					{this.renderInput('Request Template', 'template', true, 14, {
 						flex: 1,
-					}) }
+					})}
 				</KeyboardAwareScrollView>
 			</View>
 		);
@@ -127,6 +131,7 @@ const styles = StyleSheet.create({
 	},
 	inputStyle: {
 		fontSize: moderateScale(16),
+		textAlignVertical:'center'
 	},
 	buttonContainer: {
 		width: '95%',
