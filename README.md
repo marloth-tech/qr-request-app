@@ -8,7 +8,7 @@ The QR-Code is then only used to change values from that template.
 
 
 
-e.g. to create a material request in ERPnext you would enter: 
+e.g. to create a **material request in ERPnext** you would enter: 
 
 url: `https://<yourerpnext.com>/api/resource/Material%20Request`
 token: `xxxxxxxxxxx:yyyyyyyyyyyyyy`
