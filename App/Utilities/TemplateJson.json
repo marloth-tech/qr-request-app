@@ -1,0 +1,21 @@
+{
+  "data": {
+    "naming_series": "MAT MR --.",
+    "material_request_type": "",
+    "transaction_date": "",
+    "company": "myCompany",
+    "status": "Pending",
+    "items": [
+      {
+        "item_code": "STO ITEM 2020 00001",
+        "item_name": "ITEM",
+        "schedule_date": "2020 10 10",
+        "description": "DESCRIPTION",
+        "qty": "1",
+        "stock_uom": "",
+        "uom": "",
+        "conversion_factor": ""
+      }
+    ]
+  }
+}
