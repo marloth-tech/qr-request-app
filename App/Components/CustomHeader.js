@@ -15,11 +15,11 @@ import {ICON_TYPES} from '../Utilities/Constants';
 import {NavigationService} from '../Services/NavigatorServices';
 
 const CustomNavBar = (props = {}) => {
-  const {isLogo = false, isBack,isSetting=false,isSaveIcon=false} = props || {};
+  const {isLogo = false, isBack,isSetting=false,isSaveIcon=false,backgroundColor=Colors.primary} = props || {};
   return (
     <View style={styles.container}>
-      {/*<StatusBar backgroundColor={Colors.primary} />*/}
-      <View style={[styles.rowContainer, props.container]}>
+      <StatusBar backgroundColor={backgroundColor} />
+      <View style={[styles.rowContainer, props.container,{backgroundColor}]}>
         <View style={styles.leftContainer}>
           {isBack && (
             <TouchableOpacity onPress={NavigationService.goBack}>
@@ -38,7 +38,7 @@ const CustomNavBar = (props = {}) => {
           )}
           {isLogo && (
             <Image
-              source={require('../Images/logo.png')}
+              source={require('../Images/logo1.png')}
               style={styles.image}
             />
           )}
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    height: moderateScale(50),
+    height: moderateScale(54),
     justifyContent: 'space-between',
     backgroundColor: Colors.primary,
     paddingLeft: scale(10),

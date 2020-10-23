@@ -79,7 +79,7 @@ class HomeScreen extends Component {
                   styles.buttonContainer,
                   isDisabled && styles.disableButtonStyle,
                 ]}>
-                <Text style={styles.buttonText}>OK. Got it!</Text>
+                <Text style={styles.buttonText}>Send Request</Text>
               </TouchableOpacity>
             }
           />
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: moderateScale(6),
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.blue,
     paddingVertical: moderateScale(12),
   },
   buttonText: {
