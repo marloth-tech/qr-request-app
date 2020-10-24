@@ -43,13 +43,15 @@ const CustomNavBar = (props = {}) => {
             />
           )}
         </View>
-        <View style={styles.rightContainer}>
+        <View style={[styles.rightContainer]}>
           {isSetting && (
-            <TouchableOpacity onPress={()=>NavigationService.navigate('SettingScreen')}>
+            <TouchableOpacity
+              onPress={()=>NavigationService.navigate('SettingScreen')}
+              style={styles.settingIconContainer}>
               <VectorIcon
                 name={'setting'}
                 type={ICON_TYPES.AntDesign}
-                size={moderateScale(24)}
+                size={moderateScale(18)}
                 color={Colors.grey}
               />
             </TouchableOpacity>
@@ -107,4 +109,7 @@ const styles = StyleSheet.create({
     height: moderateScale(40),
     justifyContent: 'center',
   },
+  settingIconContainer:{
+    paddingTop:moderateScale(2)
+  }
 });
