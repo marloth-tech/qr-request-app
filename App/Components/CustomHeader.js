@@ -26,7 +26,7 @@ const CustomNavBar = (props = {}) => {
               <VectorIcon
                 name={'chevron-left'}
                 type={ICON_TYPES.Feather}
-                size={moderateScale(35)}
+                size={moderateScale(30)}
                 color={Colors.white}
               />
             </TouchableOpacity>
@@ -49,8 +49,8 @@ const CustomNavBar = (props = {}) => {
               <VectorIcon
                 name={'setting'}
                 type={ICON_TYPES.AntDesign}
-                size={moderateScale(35)}
-                color={Colors.white}
+                size={moderateScale(24)}
+                color={Colors.grey}
               />
             </TouchableOpacity>
           )}
@@ -59,7 +59,7 @@ const CustomNavBar = (props = {}) => {
               <VectorIcon
                 name={'save'}
                 type={ICON_TYPES.MaterialIcons}
-                size={moderateScale(30)}
+                size={moderateScale(24)}
                 color={Colors.white}
               />
             </TouchableOpacity>
@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
   leftContainer: {
     width: scale(40),
     height: moderateScale(40),
+    justifyContent:'center'
   },
   middleContainer: {},
   logoStyle: {},
