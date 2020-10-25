@@ -1,5 +1,17 @@
-# APK-Download 
+# Preview
+
+**APK download:**
 https://dl.marloth.tech/wjPk1h
+
+<table style="width:100%">
+  <tr>
+    <th><a href="url"><img src="https://static.marloth.tech/pictures/screenshot2_qr_code_scanner.jpg" width="250"></a></th>
+    <th><a href="url"><img src="https://static.marloth.tech/pictures/screenshot3_qr_code_scanner.jpg" width="250"></a></th>
+    <th><a href="url"><img src="https://static.marloth.tech/pictures/screenshot1_qr_code_scanner.jpg" width="250"></a></th>
+  </tr>
+</table>
+
+
 
 # qr-request-app
 
